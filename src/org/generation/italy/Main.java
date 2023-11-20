@@ -15,6 +15,7 @@ public class Main {
 		ArrayList<Integer> golOspite=new ArrayList<>();
 		String squadra1, squadra2, continua, risposta;
 		int punteggio1, punteggio2;
+		boolean controllo=false;
 		HashMap<String, Integer> classifica=new HashMap<>(); {{
 			classifica.put("lazio", 0);
 			classifica.put("roma", 0);
@@ -26,7 +27,7 @@ public class Main {
 		
 		
 		do {
-			
+												//squadra casa
 			System.out.println("inserisci una partita");
 			
 			System.out.println("squadra in casa?");
@@ -47,9 +48,10 @@ public class Main {
 				}
 			}
 		
+			
+		do {										//squadra ospite
 			System.out.println("squadra ospite");
 			squadra2=sc.nextLine();
-		
 			if(!classifica.containsKey(squadra2))
 			{
 				System.out.println("La squadra non esiste.\nVuoi aggiungerla?");
@@ -60,11 +62,11 @@ public class Main {
 				}
 				else
 				{
-					risposta.equals("si");
-					continue;
+					controllo=true;
 				}
 			}
-	
+		}while(controllo==true);	
+												//punteggio
 			partite.add(squadra1+"-"+squadra2);
 			
 			System.out.println("Quanti gol ha segnato chi stava in casa?");
@@ -94,7 +96,7 @@ public class Main {
 		}	
 		while(risposta.equals("si"));
 		
-		System.out.println("Resoconto Partite");
+		System.out.println("Resoconto Partite");				//resoconto partita
 		
 		for (int i=0;i<partite.size();i++)
 		{
@@ -103,7 +105,7 @@ public class Main {
 		System.out.println("La classifica è:");
 		ArrayList<String> prova=new ArrayList<>(classifica.keySet());
 		Collections.sort(prova);
-		for(String t:classifica.keySet())									//scorre tutte le targhe (chiavi)
+		for(String t:classifica.keySet())									
 			System.out.println(t+" "+classifica.get(t)+" punti");
 		
 		sc.close();
