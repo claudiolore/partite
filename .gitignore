@@ -53,3 +53,4 @@ local.properties
 # Locally stored "Eclipse launch configurations"
 *.launch
 /bin//bin/
+/bin/

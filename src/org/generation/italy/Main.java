@@ -28,9 +28,9 @@ public class Main {
 		
 		do {
 												//squadra casa
-			System.out.println("inserisci una partita");
+			System.out.println("Inserisci una NUOVA partita");
 			
-			System.out.println("squadra in casa?");
+			System.out.println("Squadra in casa?:");
 			squadra1=sc.nextLine();
 		
 			if(!classifica.containsKey(squadra1))
@@ -43,29 +43,28 @@ public class Main {
 				}
 				else
 				{
-					risposta.equals("si");
+					risposta="si";
 					continue;
 				}
 			}
 		
-			
-		do {										//squadra ospite
-			System.out.println("squadra ospite");
-			squadra2=sc.nextLine();
-			if(!classifica.containsKey(squadra2))
-			{
-				System.out.println("La squadra non esiste.\nVuoi aggiungerla?");
-				risposta=sc.nextLine();
-				if(risposta.equals("si"))
+			//squadra ospite
+				System.out.println("Squadra ospite:");
+				squadra2=sc.nextLine();
+				if(!classifica.containsKey(squadra2))
 				{
-					classifica.put(squadra2, 0);
+					System.out.println("La squadra non esiste.\nVuoi aggiungerla?");
+					risposta=sc.nextLine();
+					if(risposta.equals("si"))
+					{
+						classifica.put(squadra2, 0);
+					}
+					else
+					{
+						risposta="si";
+						continue;
+					}
 				}
-				else
-				{
-					controllo=true;
-				}
-			}
-		}while(controllo==true);	
 												//punteggio
 			partite.add(squadra1+"-"+squadra2);
 			
