@@ -8,14 +8,14 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Scanner sc=new Scanner(System.in);
 		ArrayList<String> partite=new ArrayList<String>();
 		ArrayList<Integer> golCasa=new ArrayList<>();
 		ArrayList<Integer> golOspite=new ArrayList<>();
-		String squadra1, squadra2, continua, risposta;
+		String squadra1, squadra2, risposta;
 		int punteggio1, punteggio2;
-		boolean controllo=false;
+		
 		HashMap<String, Integer> classifica=new HashMap<>(); {{
 			classifica.put("lazio", 0);
 			classifica.put("roma", 0);
